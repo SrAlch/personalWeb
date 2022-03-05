@@ -1,8 +1,5 @@
 import React from "react";
 
-// API
-import API from '../API';
-
 // Config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 
@@ -29,8 +26,6 @@ const Home = () => {
         setSearchTerm, 
         setIsLoadingMore 
     } = useHomeFetch();
-
-    console.log(state);
 
     if (error) return <div>Something went wrong ...</div>;
 

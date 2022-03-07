@@ -17,7 +17,7 @@ const defaultConfig = {
 
 // Types
 export type Movie = {
-  backfrop_path: string;
+  backdrop_path: string;
   id: number;
   original_title: string;
   overview: string;

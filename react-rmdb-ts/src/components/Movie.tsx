@@ -18,8 +18,12 @@ import { useMovieFetch } from '../hooks/useMovieFetch';
 // Image
 import NoImage from '../images/no_image.jpg';
 
-const Movie = () => {
-    const { movieId } = useParams();
+export type Props = {
+    movieId: string
+};
+
+const Movie: React.FC = () => {
+    const { movieId } = useParams<keyof Props>() as Props;
     const { state: movie, loading, error} = useMovieFetch(movieId);
 
     if (loading) return <Spinner />

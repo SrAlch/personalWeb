@@ -1,4 +1,5 @@
-import React, { useState, createContext, Dispatch, SetStateAction } from "react";
+import React, { useState, createContext, Dispatch } from "react";
+import API from "./API";
 
 // Types
 
@@ -6,13 +7,26 @@ type Prop = {
     children: React.ReactNode;
 };
 
-export const Context = createContext();
+export interface IContextUser {
+    sessionId: string;
+    username: string;
+};
 
-const UserProvider = ({ children }: Prop) => {
-    const [state, setState] = useState(undefined);
+export type ContextUserType = {
+    sessions: IContextUser[];
+    saveSession: (session: IContextUser) => void;
+    updateSession: (sessionId: string) => void;
+};
+
+// TODO: make it work idk
+
+export const Context = createContext<ContextUserType | undefined>(undefined);
+
+const UserProvider:React.FC<Prop> = ({ children }) => {
+    const [sessions, setSessions] = useState<IContextUser[]>([]);
 
     return (
-        <Context.Provider value={[state, setState]}>{children}</Context.Provider>
+        <Context.Provider value={[sessions, setSessions]}>{children}</Context.Provider>
     )
 };
 

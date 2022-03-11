@@ -19,6 +19,7 @@ const Login = () => {
     const [error, setError] = useState(false);
 
     const {state, setState} = useContext(Context) as UserContextType;
+    console.log(state);
     const navigate = useNavigate();
 
     const handleInput = (e: ChangeEvent<HTMLInputElement>) => {

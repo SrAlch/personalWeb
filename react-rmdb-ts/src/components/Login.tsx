@@ -10,6 +10,7 @@ import { Wrapper } from "./Login.styles";
 
 // Context
 import { Context } from "../context";
+import { UserContextType } from "../@types/context";
 
 const Login = () => {
 
@@ -17,7 +18,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
 
-    const [_user, setUser] = useContext(Context);
+    const {state, setState} = useContext(Context) as UserContextType;
     const navigate = useNavigate();
 
     const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +34,7 @@ const Login = () => {
             const requestToken = await API.getRequestToken();
             const sessionId = await API.authenticate(requestToken, username, password)
 
-            setUser({ sessionId: sessionId.session_id, username })
+            setState({ sessionId: sessionId.session_id, username })
 
             navigate('/');            
         } catch (error) {

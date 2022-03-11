@@ -11,7 +11,7 @@ import NotFound from './components/NotFound';
 import Login from './components/Login';
 
 // Context
-import UserProvider from './context';
+import UserProvider from './context/contextProvider';
 
 // Styles
 import { GlobalStyle } from './GlobalStyle'

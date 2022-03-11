@@ -1,6 +1,6 @@
 export interface IUser {
     sessionId: string;
-    username: string;
+    username: string
 };
 
 export type UserContextType = {

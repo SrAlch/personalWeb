@@ -9,7 +9,7 @@ import Button from "./Button";
 import { Wrapper } from "./Login.styles";
 
 // Context
-import { Context } from "../context";
+import Context from "../context/context";
 import { UserContextType } from "../@types/context";
 
 const Login = () => {
@@ -19,7 +19,7 @@ const Login = () => {
     const [error, setError] = useState(false);
 
     const {state, setState} = useContext(Context) as UserContextType;
-    console.log(state);
+    
     const navigate = useNavigate();
 
     const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,8 +34,8 @@ const Login = () => {
         try {
             const requestToken = await API.getRequestToken();
             const sessionId = await API.authenticate(requestToken, username, password)
-
-            setState({ sessionId: sessionId.session_id, username })
+            console.log(sessionId);
+            setState({ sessionId: sessionId.session_id, username})
 
             navigate('/');            
         } catch (error) {

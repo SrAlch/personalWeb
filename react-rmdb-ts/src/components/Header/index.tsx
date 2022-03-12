@@ -20,7 +20,7 @@ const Header: React.FC = () => {
                 <Link to='/'>
                     <LogoImg src={RMDBLogo} alt='rmdb-logo' />
                 </Link>
-                {state && (state.username != "") ? (
+                {state && (state.username !== "") ? (
                     <span>Logged in as: {state.username}</span>
                 ) : (
                     <Link to='/login'>

@@ -4,13 +4,12 @@ This web site is being created to get hands down practice on ReactJS and its com
 
 - [React Router ](https://reactrouter.com/)
 - [Styled Components](https://styled-components.com/)
-- [Prop-Types](https://www.npmjs.com/package/prop-types)
 
-The main application its on main branch, but a refactor of the code for Typescript reside on app-type
+The whole app is being refactored to TypeScript including the Log-in for the database [TMDB](https://www.themoviedb.org/)
 
 ## Usage
 
-The app requires `./my-app/.env` with the variable `REACT_APP_API_KEY=` and the API key from [The Movie Database](https://www.themoviedb.org/) without quotation
+The app is being deployed on [Netlify](https://www.netlify.com/), you can find the live version [here](https://goofy-bose-8610da.netlify.app/).
 
 ## Credits
 

@@ -28,7 +28,7 @@ type Props = {
 const MovieInfo: React.FC<Props> = ({ movie }) => {
     const { state } = useContext(Context) as UserContextType;
     const handleRating = async (value: number) => {
-        const rate = await API.rateMovie(state.sessionId, String(movie.id), value)
+        await API.rateMovie(state.sessionId, String(movie.id), value);
     }
 
     return (
@@ -58,7 +58,7 @@ const MovieInfo: React.FC<Props> = ({ movie }) => {
                             ))}
                         </div>
                     </div>
-                    {state && (state.username != "") ? (
+                    {state && (state.username !== "") ? (
                         <div>
                             <p>Rate Movie</p>
                             <Rate callback={handleRating} />
